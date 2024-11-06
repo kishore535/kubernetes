@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cars-service
+  namespace: cars
+spec:
+  selector:
+   matchLabels:
+    app: cars  # Matches the Pods with label 'app: frontend'
+  ports:
+    - port: 80        # Exposes the Service on port 80
+      targetPort: 80   # Forwards traffic to port 80 on the Pods
+  type: ClusterIP  
