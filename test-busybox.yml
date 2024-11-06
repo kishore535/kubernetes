@@ -1,0 +1,18 @@
+# Busybox pod with start command for container
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-pod
+  labels:
+    type: task
+  namespace: cars
+spec:
+  containers:
+    - name: busybox-container
+      image: busybox
+      command:
+        - sh
+        - -c
+        - |
+          wget cars-service:80;
+          sleep 3600
