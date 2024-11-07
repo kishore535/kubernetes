@@ -5,7 +5,6 @@ metadata:
   namespace: cars
 spec:
   selector:
-   matchLabels:
     app: cars  # Matches the Pods with label 'app: frontend'
   ports:
     - port: 80        # Exposes the Service on port 80
